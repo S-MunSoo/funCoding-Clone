@@ -291,3 +291,41 @@ footer {
   color: #545e6f;
   margin: 0.2rem 0.5rem;
 }
+/* scroll 가상요소 */
+#backtotop {
+  background-color: rgb(47, 48, 89);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition-property: background-color, opacity, visibility;
+  transition-duration: 0.3s, 0.5s, 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+/* 아이콘 적용 방법 
+1. ::after(요소뒤에 content 추가) 가상요소에서,
+2. content "폰트어썸 유니코드"를 넣고,
+3. font-family : fontAwesome 이라고 넣으면 된다.
+*/
+
+#backtotop::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-size: 1.5rem;
+  line-height: 40px; /* line-height 와 height 값이 같으면 값이 가운데 정렬된다. */
+  color: #fff;
+}
+#backtotop.show {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgb(47, 48, 49);
+}
+#backtotop.show:hover {
+  cursor: pointer;
+  background-color: #2186c4;
+}
