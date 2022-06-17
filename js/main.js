@@ -1,5 +1,3 @@
-console.log(123444);
-
 const backToTop = document.getElementById("backtotop");
 
 function checkScroll() {
